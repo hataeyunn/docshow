@@ -1,0 +1,234 @@
+================================================================================
+==== Node Report ===============================================================
+
+Event: exception, location: "OnUncaughtException"
+Filename: node-report.20181206.222636.5247.001.txt
+Dump event time:  2018/12/06 22:26:36
+Module load time: 2018/12/06 20:18:04
+Process ID: 5247
+Command line: node /home/tyha/.nvm/versions/node/v8.12.0/bin/composer network start --networkName tutorial-network --networkVersion 0.0.1 --networkAdmin admin --networkAdminEnrollSecret adminpw --card PeerAdmin@hlfv1 --file networkadmin.card 
+
+Node.js version: v8.12.0
+(http_parser: 2.8.0, v8: 6.2.414.66, uv: 1.19.2, zlib: 1.2.11, ares: 1.10.1-DEV,
+ modules: 57, nghttp2: 1.32.0, napi: 3, openssl: 1.0.2p, icu: 60.1, unicode: 10.0,
+ cldr: 32.0, tz: 2017c)
+
+node-report version: 2.2.1 (built against Node.js v8.12.0, glibc 2.23, 64 bit)
+
+OS version: Linux 4.4.0-139-generic #165-Ubuntu SMP Wed Oct 24 10:58:50 UTC 2018
+(glibc: 2.23)
+
+Machine: tyha x86_64
+
+================================================================================
+==== JavaScript Stack Trace ====================================================
+
+WriteStream.emit (events.js:1:1)
+onwriteError (_stream_writable.js:1:1)
+onwrite (_stream_writable.js:1:1)
+_destroy (internal/streams/destroy.js:1:1)
+WriteStream.stderr._destroy (internal/process/stdio.js:1:1)
+WriteStream.destroy (internal/streams/destroy.js:1:1)
+WriteWrap.afterWrite [as oncomplete] (net.js:1:1)
+
+================================================================================
+==== Native Stack Trace ========================================================
+
+ 0: [pc=0x7f780abe356b] nodereport::OnUncaughtException(v8::Isolate*) [/home/tyha/.nvm/versions/node/v8.12.0/lib/node_modules/composer-cli/node_modules/node-report/api.node]
+ 1: [pc=0xead6e2] v8::internal::Isolate::Throw(v8::internal::Object*, v8::internal::MessageLocation*) [node]
+ 2: [pc=0x10262ad] v8::internal::Runtime_Throw(int, v8::internal::Object**, v8::internal::Isolate*) [node]
+ 3: [pc=0x262c820842fd] 
+
+================================================================================
+==== JavaScript Heap and Garbage Collector =====================================
+
+Heap space name: new_space
+    Memory size: 33,554,432 bytes, committed memory: 29,942,528 bytes
+    Capacity: 16,498,688 bytes, used: 8,710,512 bytes, available: 7,788,176 bytes
+Heap space name: old_space
+    Memory size: 56,422,400 bytes, committed memory: 55,695,200 bytes
+    Capacity: 42,839,200 bytes, used: 40,159,184 bytes, available: 2,680,016 bytes
+Heap space name: code_space
+    Memory size: 2,097,152 bytes, committed memory: 1,665,472 bytes
+    Capacity: 1,741,824 bytes, used: 1,537,664 bytes, available: 204,160 bytes
+Heap space name: map_space
+    Memory size: 5,263,360 bytes, committed memory: 5,060,792 bytes
+    Capacity: 5,166,824 bytes, used: 2,235,200 bytes, available: 2,931,624 bytes
+Heap space name: large_object_space
+    Memory size: 4,018,176 bytes, committed memory: 4,018,176 bytes
+    Capacity: 1,402,052,520 bytes, used: 3,953,064 bytes, available: 1,398,099,456 bytes
+
+Total heap memory size: 101,355,520 bytes
+Total heap committed memory: 96,382,168 bytes
+Total used heap memory: 56,595,624 bytes
+Total available heap memory: 1,411,703,432 bytes
+
+Heap memory limit: 1,501,560,832
+
+================================================================================
+==== Resource Usage ============================================================
+
+Process total resource usage:
+  User mode CPU: 1.660000 secs
+  Kernel mode CPU: 0.088000 secs
+  Average CPU Consumption : 0.022666%
+  Maximum resident set size: 135,835,648 bytes
+  Page faults: 5 (I/O required) 53035 (no I/O required)
+  Filesystem activity: 1000 reads 16 writes
+
+Event loop thread resource usage:
+  User mode CPU: 1.396000 secs
+  Kernel mode CPU: 0.080000 secs
+  Average CPU Consumption : 0.019139%
+  Filesystem activity: 1000 reads 16 writes
+
+================================================================================
+==== Node.js libuv Handle Summary ==============================================
+
+(Flags: R=Ref, A=Active)
+Flags  Type      Address             Details
+[-A]   async     0x0000000003ec3da0  
+[--]   check     0x00007ffe4a98f9b0  
+[R-]   idle      0x00007ffe4a98fa28  
+[--]   prepare   0x00007ffe4a98faa0  
+[--]   check     0x00007ffe4a98fb18  
+[-A]   async     0x000000000217bb40  
+[R-]   timer     0x0000000003edcdb0  repeat: 0, timeout expired: 7882920 ms ago
+[R-]   tty       0x0000000003ef3dc8  , file descriptor: 9, write queue size: 0, writable
+[-A]   signal    0x0000000003edcbf0  signum: 28 (SIGWINCH)
+[R-]   tty       0x0000000003ef4518  , file descriptor: 11, write queue size: 0, writable
+[-A]   async     0x00007f780adebcc0  
+[-A]   signal    0x0000000003ed54f0  signum: 6 (SIGABRT)
+[-A]   signal    0x0000000003f61fc0  signum: 14 (SIGALRM)
+[-A]   signal    0x0000000003f41a70  signum: 1 (SIGHUP)
+[-A]   signal    0x00000000040317c0  signum: 2 (SIGINT)
+[-A]   signal    0x0000000004033ea0  signum: 15 (SIGTERM)
+[-A]   signal    0x0000000004034280  signum: 26 (SIGVTALRM)
+[-A]   signal    0x0000000003f6e2f0  signum: 24 (SIGXCPU)
+[-A]   signal    0x0000000003f019a0  signum: 25 (SIGXFSZ)
+[-A]   signal    0x000000000407a830  signum: 12 (SIGUSR2)
+[-A]   signal    0x0000000003f63500  signum: 5 (SIGTRAP)
+[-A]   signal    0x0000000003f61b00  signum: 31 (SIGSYS)
+[-A]   signal    0x0000000004074670  signum: 3 (SIGQUIT)
+[-A]   signal    0x0000000004074760  signum: 6 (SIGABRT)
+[-A]   signal    0x0000000003f2df70  signum: 29 (SIGIO)
+[-A]   signal    0x0000000003f2e060  signum: 29 (SIGIO)
+[-A]   signal    0x0000000003f2e150  signum: 30 (SIGPWR)
+[-A]   signal    0x0000000003f2e240  signum: 16 (SIGSTKFLT)
+[-A]   signal    0x0000000003f785c0  signum: 31 (SIGSYS)
+[RA]   timer     0x0000000003f786b0  repeat: 0, timeout in: 80 ms
+[--]   timer     0x0000000003f76308  repeat: 0, timeout expired: 7703625 ms ago
+[-A]   async     0x0000000004074590  
+[R-]   timer     0x0000000003f6a190  repeat: 0, timeout in: 58628872 ms
+[-A]   async     0x00007f7808bd1a58  
+[R-]   timer     0x0000000003ed5240  repeat: 0, timeout in: 58370680 ms
+[R-]   prepare   0x00007f7808bd1980  
+[-A]   async     0x0000000003eafa20  
+[-A]   async     0x0000000003f19a30  
+[-A]   async     0x0000000003eaf670  
+[-A]   async     0x00000000040595e0  
+[-A]   async     0x0000000003eaf700  
+[-A]   async     0x00000000040878c0  
+[-A]   async     0x0000000003fb55c0  
+[R-]   timer     0x0000000003ed8380  repeat: 0, timeout expired: 7882920 ms ago
+[--]   timer     0x0000000003f2de10  repeat: 0, timeout expired: 7706610 ms ago
+[-A]   timer     0x0000000003f775f0  repeat: 0, timeout in: 5000 ms
+
+================================================================================
+==== System Information ========================================================
+
+Environment variables
+  XDG_VTNR=7
+  XDG_SESSION_ID=c1
+  CLUTTER_IM_MODULE=xim
+  XDG_GREETER_DATA_DIR=/var/lib/lightdm-data/tyha
+  NVM_CD_FLAGS=
+  GPG_AGENT_INFO=/home/tyha/.gnupg/S.gpg-agent:0:1
+  SHELL=/bin/bash
+  TERM=xterm-256color
+  VTE_VERSION=4205
+  QT_LINUX_ACCESSIBILITY_ALWAYS_ON=1
+  WINDOWID=29360134
+  UPSTART_SESSION=unix:abstract=/com/ubuntu/upstart-session/1000/1109
+  GNOME_KEYRING_CONTROL=
+  GTK_MODULES=gail:atk-bridge:unity-gtk-module
+  NVM_DIR=/home/tyha/.nvm
+  USER=tyha
+  LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+  QT_ACCESSIBILITY=1
+  XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session0
+  XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0
+  SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+  DEFAULTS_PATH=/usr/share/gconf/ubuntu.default.path
+  XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/usr/share/upstart/xdg:/etc/xdg
+  PATH=/home/tyha/.nvm/versions/node/v8.12.0/bin:/usr/local/hyperledger/fabric-samples/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin:/home/tyha/go/bin:/usr/local/go/bin:/home/tyha/go/bin
+  DESKTOP_SESSION=ubuntu
+  QT_IM_MODULE=fcitx
+  QT_QPA_PLATFORMTHEME=appmenu-qt5
+  XDG_SESSION_TYPE=x11
+  JOB=gnome-session
+  PWD=/home/tyha/capstone_project/docshow
+  XMODIFIERS=@im=fcitx
+  JAVA_HOME=/usr/lib/jvm/jdk1.8.0
+  GNOME_KEYRING_PID=
+  LANG=ko_KR.UTF-8
+  GDM_LANG=ko
+  MANDATORY_PATH=/usr/share/gconf/ubuntu.mandatory.path
+  IM_CONFIG_PHASE=1
+  COMPIZ_CONFIG_PROFILE=ubuntu
+  GDMSESSION=ubuntu
+  SESSIONTYPE=gnome-session
+  GTK2_MODULES=overlay-scrollbar
+  HOME=/home/tyha
+  XDG_SEAT=seat0
+  SHLVL=1
+  LANGUAGE=ko
+  GNOME_DESKTOP_SESSION_ID=this-is-deprecated
+  UPSTART_INSTANCE=
+  UPSTART_EVENTS=started starting
+  XDG_SESSION_DESKTOP=ubuntu
+  LOGNAME=tyha
+  QT4_IM_MODULE=fcitx
+  XDG_DATA_DIRS=/usr/share/ubuntu:/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop:/var/lib/snapd/desktop
+  DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-IT1QrnKuoh
+  NVM_BIN=/home/tyha/.nvm/versions/node/v8.12.0/bin
+  LESSOPEN=| /usr/bin/lesspipe %s
+  GOPATH=/home/tyha/go
+  INSTANCE=Unity
+  UPSTART_JOB=unity-settings-daemon
+  XDG_RUNTIME_DIR=/run/user/1000
+  DISPLAY=:0
+  XDG_CURRENT_DESKTOP=Unity
+  GTK_IM_MODULE=fcitx
+  LESSCLOSE=/usr/bin/lesspipe %s %s
+  XAUTHORITY=/home/tyha/.Xauthority
+  _=/home/tyha/.nvm/versions/node/v8.12.0/bin/composer
+  OLDPWD=/home/tyha/capstone_project
+  SUPPRESS_NO_CONFIG_WARNING=y
+  GRPC_SSL_CIPHER_SUITES=ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384
+
+Resource limits                        soft limit      hard limit
+  core file size (blocks)                       0       unlimited
+  data seg size (kbytes)                unlimited       unlimited
+  file size (blocks)                    unlimited       unlimited
+  max locked memory (bytes)                 65536           65536
+  max memory size (kbytes)              unlimited       unlimited
+  open files                              1048576         1048576
+  stack size (bytes)                      8388608       unlimited
+  cpu time (seconds)                    unlimited       unlimited
+  max user processes                        63302           63302
+  virtual memory (kbytes)               unlimited       unlimited
+
+Loaded libraries
+  /lib/x86_64-linux-gnu/libdl.so.2
+  /lib/x86_64-linux-gnu/librt.so.1
+  /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+  /lib/x86_64-linux-gnu/libm.so.6
+  /lib/x86_64-linux-gnu/libgcc_s.so.1
+  /lib/x86_64-linux-gnu/libpthread.so.0
+  /lib/x86_64-linux-gnu/libc.so.6
+  /lib64/ld-linux-x86-64.so.2
+  /home/tyha/.nvm/versions/node/v8.12.0/lib/node_modules/composer-cli/node_modules/node-report/api.node
+  /home/tyha/.nvm/versions/node/v8.12.0/lib/node_modules/composer-cli/node_modules/grpc/src/node/extension_binary/node-v57-linux-x64-glibc/grpc_node.node
+
+================================================================================

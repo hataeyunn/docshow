@@ -1,0 +1,155 @@
+<!--
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<div class="modal fade" id="addAssetModal" tabindex="-1" role="dialog" aria-labelledby="addAssetModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        
+      </div>
+      <form [formGroup]="myForm">
+        <div class="modal-body">
+
+
+
+
+
+          <div class="form-group text-left">
+            <label for="medicalRecordID">의료 기록 ID</label>
+
+            <input formControlName="medicalRecordID" type="text" class="form-control">
+
+          </div>
+
+
+
+
+          <div class="form-group text-left">
+            <label for="disease">병명</label>
+
+            <input formControlName="disease" type="text" class="form-control">
+
+          </div>
+
+
+
+
+          <div class="form-group text-left">
+            <label for="medicalContents">진단 내용</label>
+
+            <input formControlName="medicalContents" type="text" class="form-control">
+
+          </div>
+
+
+
+
+          <div class="form-group text-left">
+            <label for="patientID">환자 ID</label>
+
+            <input formControlName="patientID" type="text" class="form-control">
+
+          </div>
+
+
+
+
+          <div class="form-group text-left">
+            <label for="doctorID">의사 ID</label>
+
+            <input formControlName="doctorID" type="text" class="form-control">
+
+          </div>
+
+
+
+
+          <div class="form-group text-left">
+            <label for="date">진료 일자</label>
+
+            <input formControlName="date" type="text" class="form-control">
+
+          </div>
+
+
+
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+  <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+    <strong>Error:</strong> {{errorMessage}}
+  </div>
+
+  <div class="row">
+    <div class="col-md-9">
+      <h1 class="asset-title" id='assetName'>의료 기록 (해당 기록은 encryption 값 입니다.)</h1>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-responsive">
+        <thead class="thead">
+          <tr class="thead-cols">
+
+            <th class="info">의료 기록 ID</th>
+
+            <th class="info">병명</th>
+
+            <th class="info">진단 내용</th>
+
+            <th class="info">환자 ID</th>
+
+            <th class="info">의사 ID</th>
+
+            <th class="info">진료 일자</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let asset of allAssets">
+
+
+            <td class="asset-properties">{{asset.medicalRecordID}}</td>
+
+            <td class="asset-properties">{{asset.disease}}</td>
+
+            <td class="asset-properties">{{asset.medicalContents}}</td>
+
+            <td class="asset-properties">{{asset.patientID}}</td>
+
+            <td class="asset-properties">{{asset.doctorID}}</td>
+
+            <td class="asset-properties">{{asset.date}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,144 @@
+<!--
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<div class="modal fade" id="addTransactionModal" tabindex="-1" role="dialog" aria-labelledby="addTransactionModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="addTransactionModalLabel">진료 기록 생성</h4>
+        <p class="modal-intro">아래 내용을 입력하세요</p>
+      </div>
+      <form [formGroup]="myForm">
+        <div class="modal-body">
+
+
+          
+
+            
+              <div class="form-group text-left">
+                <label for="disease">병명</label>
+                
+                  <input formControlName="disease" type="text" class="form-control">
+                
+              </div>
+            
+          
+
+            
+              <div class="form-group text-left">
+                <label for="medicalContents">진단 내용</label>
+                
+                  <input formControlName="medicalContents" type="text" class="form-control">
+                
+              </div>
+            
+          
+
+            
+              <div class="form-group text-left">
+                <label for="patientID">환자 ID</label>
+                
+                  <input formControlName="patientID" type="text" class="form-control">
+                
+              </div>
+            
+          
+
+            
+              <div class="form-group text-left">
+                <label for="doctorID">의사 ID</label>
+                
+                  <input formControlName="doctorID" type="text" class="form-control">
+                
+              </div>
+            
+          
+
+            
+              <div class="form-group text-left">
+                <label for="date">진료 일자</label>
+                
+                  <input formControlName="date" type="text" class="form-control">
+                
+              </div>
+            
+          
+
+            
+          
+
+            
+          
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
+            <button (click)="addTransaction(myForm);" type="submit" class="btn btn-success" data-dismiss="modal">확인</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="container col-md-6">
+    <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+        <strong>Error:</strong> {{errorMessage}}
+    </div>
+
+  <div class="row">
+    <div class="col-md-12">
+        <h1 class="transaction-title" id='transactionName'>진료 기록 생성</h1>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-12">
+          생성버튼을 누르면 네트워크 상에 등록됩니다.
+          <br>
+          <ul>
+            
+              
+                <li><span class="attribute"><b>병명</b></span></li>
+              
+            
+              
+                <li><span class="attribute"><b>진단 내용</b></span></li>
+              
+            
+              
+                <li><span class="attribute"><b>환자 ID</b></span></li>
+              
+            
+              
+                <li><span class="attribute"><b>의사 ID</b></span></li>
+              
+            
+              
+                <li><span class="attribute"><b>진료 일자</b></span></li>
+              
+            
+              
+            
+              
+            
+          </ul>
+        </div>
+      </div>
+      <button (click)="resetForm();" type="button" class="btn btn-primary" data-toggle="modal" data-target="#addTransactionModal">생성</button>
+    </div>
+  </div>
+</div>
+

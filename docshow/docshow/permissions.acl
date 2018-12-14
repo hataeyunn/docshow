@@ -1,0 +1,117 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Access control rules for mynetwork
+ */
+rule SystemACL {
+    description:  "System ACL to permit all access"
+    participant: "org.hyperledger.composer.system.Participant"
+    operation: ALL
+    resource: "org.hyperledger.composer.system.**"
+    action: ALLOW
+}
+
+rule NetworkAdminUser {
+    description: "Grant business network administrators full access to user resources"
+    participant: "org.hyperledger.composer.system.NetworkAdmin"
+    operation: ALL
+    resource: "**"
+    action: ALLOW
+}
+
+rule NetworkAdminSystem {
+    description: "Grant business network administrators full access to system resources"
+    participant: "org.hyperledger.composer.system.NetworkAdmin"
+    operation: ALL
+    resource: "org.hyperledger.composer.system.**"
+    action: ALLOW
+}
+
+/*
+
+
+
+rule GrantAccessTransaction {
+    description: "Allow all patient to submit grantAccess transactions"
+    participant: "org.cap.doc.Patient"
+    operation: ALL
+    resource: "org.cap.doc.GrantAccess"
+    action: ALLOW
+}
+
+rule RevokeAccessTransaction {
+    description: "Allow all patient to submit RevokeAccess transactions"
+    participant: "org.cap.doc.Patient"
+    operation: ALL
+    resource: "org.cap.doc.revokeAccess"
+    action: ALLOW
+}
+
+rule GrantAccessToHospitalTran {
+    description: "Allow all patient to submit grantAccess transactions"
+    participant: "org.cap.doc.Patient"
+    operation: ALL
+    resource: "org.cap.doc.GrantAccessToHospital"
+    action: ALLOW
+}
+
+rule RevokeAccessHospitalTran {
+    description: "Allow all patient to submit RevokeAccess transactions"
+    participant: "org.cap.doc.Patient"
+    operation: ALL
+    resource: "org.cap.doc.revokeAccessFromHospital"
+    action: ALLOW
+}
+
+rule R1a_PatientSeeAllHospital {
+  description: "Patient can see all Doctors"
+  participant: "org.cap.doc.Patient"
+  operation: ALL
+  resource: "org.cap.doc.Hospital"
+  action: ALLOW
+}
+rule R1a_DoctorSeeAllDoctors {
+  description: "Patient can see all Doctors"
+  participant: "org.cap.doc.Doctor"
+  operation: ALL
+  resource: "org.cap.doc.Doctor"
+  action: ALLOW
+}
+
+
+
+
+
+rule R1a_EveryoneSeeAllHospitals {
+  description: "everyone can see all Hospitals"
+  participant: "ANY"
+  operation: READ
+  resource: "org.cap.doc.Hospital"
+  action: ALLOW
+}
+
+*/
+
+/*rule R1a_PatientAddMyDoctorInDoctor {
+  description: "Trader can see and update their own record only"
+  participant(t): "org.cap.doc.Patient"
+  operation: READ, UPDATE
+  resource(v): "org.cap.doc.Doctor"
+  condition: (
+   v.myPatients.some(function (patient) {
+      return patient.getIdentifier() === t.getIdentifier();  
+      } )
+   )
+  action: ALLOW
+}*/

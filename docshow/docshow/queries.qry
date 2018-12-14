@@ -1,0 +1,14 @@
+
+query getAllMedicalRecord{
+description: "get medical record all"
+statement:
+      SELECT org.cap.doc.MedicalRecord
+      FROM org.cap.doc.MedicalRecord
+}
+
+query getMedicalRecordOfPatient{
+description: "get medical record of patient"
+statement:
+      SELECT org.cap.doc.MedicalRecord
+      WHERE (patientID == _$patientID)
+}
